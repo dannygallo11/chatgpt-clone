@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
+/* CSS naming:
+name = an element
+.name = a class
+#name = an id*/
+
+
+
 * {
   color: white;
   font-family: 'Open Sans', sans-ser;
@@ -12,6 +19,7 @@ body {
 
 .app {
   background-color: #343541;
+  display: flex; /* This will make the sections be next to eachother */
 }
 
 .side-bar {
@@ -38,7 +46,73 @@ nav {
   margin: 10px;
 }
 
+.history {
+  padding: 10px;
+  margin: 10px;
+  height: 100%;
+}
+
+.history li {
+  list-style-type: none;
+  padding: 15px 0;
+  cursor: pointer; /* This make the cursor turn into a pointer hand when hovering over*/
+}
+
 .main {
   height: 100vh;
   width: 100%;
+  /*In order to make everthing in the center and have space between
+  Your cant use "flex-direction", "justify-content" and "align-items"
+  without initializing "display: flex" first*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.info {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  padding: 10px;
+}
+
+.bottom-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+}
+
+input {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px 15px; /*first value applies to top and bottom, second is for left and right*/
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px,
+  rgba(0, 0, 0, 0.05) 0 -12px 30px,
+  rgba(0, 0, 0, 0.05) 0 4px 6px,
+  rgba(0, 0, 0, 0.05) 0 12px 3px,
+  rgba(0, 0, 0, 0.05) 0 -3px 5px;
+}
+
+input:focus {
+  outline: none; /*This will remove the blue border when clicked into the input*/
+}
+
+#submit {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  cursor: pointer;
+
 }
